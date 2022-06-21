@@ -95,24 +95,6 @@ class Dot
       fitness = 1/(distance_to_goal * distance_to_goal); // Inverse since smaller distance means better fitness score; square score so smaller changes in distance result in a much better fitness score
       
     }
-    
-    /*if(goal_reached == true)
-    {
-      fitness = 1.0 + 1/(float)(brain.counter * brain.counter * brain.counter); // Encourage the dot to take less steps, give extra fitness so reaching the goal has a better score
-    }
-    else
-    {
-      float distance_to_goal = dist(position.x,position.y,goal.x,goal.y); // Calculate the distance to the goal
-      if(is_dead == true)
-      {
-        fitness = 1/(distance_to_goal * distance_to_goal); // Inverse since smaller distance means better fitness score; square score so smaller changes in distance result in a much better fitness score
-      }
-      else
-      {
-       fitness = 0.0000000000001; 
-      }
-    }*/
-
   }
   
   Dot get_child()

@@ -40,7 +40,7 @@ class Population
         dots[i].update(); // Call the update() function of the Dot class for each dot
       }
     }
-    surface.setTitle("Generation: " + str(generation));
+    surface.setTitle("Generation: " + str(generation) + "     Minimum Steps: " + str(minimum_steps_taken));
   }
 
   void calculate_fitness() // Update all of the dots' fiteness score
@@ -134,7 +134,7 @@ class Population
     if(dots[best_dot_index].goal_reached)
     {
       minimum_steps_taken = dots[best_dot_index].brain.counter;
-      println("Mimumum steps:",minimum_steps_taken);
+      //println("Mimumum steps:",minimum_steps_taken);
     }
 
   }

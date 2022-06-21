@@ -3,6 +3,7 @@
 This program utilizes the [NEAT (NeuroEvolution of Augmenting Topologies)](https://en.wikipedia.org/wiki/Neuroevolution_of_augmenting_topologies) genetic algorithm to simulate a population evolving through generations to reach a goal.
 # Timelapse
 ![](https://github.com/sterling-tenn/ML-Visualizer/blob/main/imgs/timelapse.gif?raw=true)
+
 The dot at the top is the goal the population is attempting to reach and the best performing dot of each generation is shown as a bigger red dot.
 # The Process
 Here's the algorithm explained in a generic sense:

@@ -9,7 +9,7 @@ class Population
 
   int best_dot_index; // Keep track of the best dot in the population to keep in the next generation - stop negative mutations on the best dot
 
-  int minimum_steps_taken = 9999; // Keep track of the minimum amount of steps the best dot took - limit subsequent dots to at least this amount
+  int minimum_steps_taken; // Keep track of the minimum amount of steps the best dot took - limit subsequent dots to at least this amount
 
   Population(int size) // Constructor
   {
@@ -32,7 +32,7 @@ class Population
   {
     for (int i=0; i<dots.length; i++) // For every dot in the array
     {
-      if (dots[i].brain.counter > minimum_steps_taken) // If the dot took more steps than it did previously
+      if (dots[i].brain.counter > minimum_steps_taken && minimum_steps_taken != 0) // If the dot took more steps than it did previously
       {
         dots[i].is_dead = true; // Kill the dot
       } else
@@ -40,7 +40,13 @@ class Population
         dots[i].update(); // Call the update() function of the Dot class for each dot
       }
     }
-    surface.setTitle("Generation: " + str(generation) + "     Minimum Steps: " + str(minimum_steps_taken));
+    if(minimum_steps_taken == 0){
+      surface.setTitle("Generation: " + str(generation) + "     Minimum Steps: N/A");
+    }
+    else
+    { 
+      surface.setTitle("Generation: " + str(generation) + "     Minimum Steps: " + str(minimum_steps_taken));
+    }
   }
 
   void calculate_fitness() // Update all of the dots' fiteness score
